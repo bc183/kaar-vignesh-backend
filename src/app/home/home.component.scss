@@ -1,0 +1,38 @@
+.container {
+    padding-top: 40px;
+    height: 100%;
+    background-image: url('../../assets/bg1.png');
+}
+
+.toolbar {
+    background-color: #0a043c;
+}
+
+.card {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.white {
+   color : white;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+
+.center {
+    text-align: center;
+    margin: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}

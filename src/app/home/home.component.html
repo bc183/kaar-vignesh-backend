@@ -1,0 +1,41 @@
+<!-- toolbar -->
+<mat-toolbar class="toolbar white">
+    <span>MyApp</span>
+</mat-toolbar>
+<!-- endToolbar -->
+<!-- start of body -->
+<div class="container">
+    <h1 class="center bold white">Welcome!</h1>
+    <div fxLayout="row" fxLayoutAlign="space-evenly start">
+        <div>
+            <mat-card class="card" (click)="openDialog('Employee')">
+                <img src="../../assets/employee.png" alt="employee" class="image">
+                <mat-card-content>
+                    <p class="center bold white">
+                      Are you an Employee?
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div>
+            <mat-card class="card" (click)="openDialog('Customer')">
+                <img src="../../assets/customer.png" alt="employee" class="image">
+                <mat-card-content>
+                    <p class="center bold white">
+                      Are you a customer?
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div>
+            <mat-card class="card" (click)="openDialog('Vendor')">
+                <img src="../../assets/vendor.jpeg" alt="employee" class="image">
+                <mat-card-content>
+                    <p class="center bold white">
+                      Are you a Vendor?
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
