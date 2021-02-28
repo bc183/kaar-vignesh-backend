@@ -1,3 +1,4 @@
+import { LoginService } from './../services/login.service';
 import { Router } from '@angular/router';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -12,7 +13,7 @@ export class LoginFormComponent implements OnInit {
 
   username: string = "";
   password: string = "";
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialogRef<LoginFormComponent>, public router: Router, private snackBar: MatSnackBar) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialogRef<LoginFormComponent>, public router: Router, private snackBar: MatSnackBar, private service: LoginService) { }
   
 
   ngOnInit(): void {
@@ -26,15 +27,24 @@ export class LoginFormComponent implements OnInit {
     }
     if (this.data.type === "Customer") {
       // TODO do Customer login
+      this.service.login(this.username, this.password).subscribe((res) => {
+        localStorage.setItem('user', res.data);
+        this.dialog.close();
+        this.router.navigate(['/customer-dashboard']);
+        this.snackBar.open("Login Successfull!", null, {
+          duration: 2000,
+          verticalPosition: "top"
+        });
+      });
     }
     if (this.data.type === "Vendor") {
       // TODO do Vendor login
     }
-    this.dialog.close();
-    this.router.navigate(['/customer-dashboard']);
-    this.snackBar.open("Login Successfull!", null, {
-      duration: 2000,
-      verticalPosition: "top"
-    });
+    // this.dialog.close();
+    // this.router.navigate(['/customer-dashboard']);
+    // this.snackBar.open("Login Successfull!", null, {
+    //   duration: 2000,
+    //   verticalPosition: "top"
+    // });
   }
 }

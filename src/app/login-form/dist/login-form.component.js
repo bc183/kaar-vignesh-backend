@@ -13,17 +13,19 @@ exports.LoginFormComponent = void 0;
 var core_1 = require("@angular/core");
 var dialog_1 = require("@angular/material/dialog");
 var LoginFormComponent = /** @class */ (function () {
-    function LoginFormComponent(data, dialog, router, snackBar) {
+    function LoginFormComponent(data, dialog, router, snackBar, service) {
         this.data = data;
         this.dialog = dialog;
         this.router = router;
         this.snackBar = snackBar;
+        this.service = service;
         this.username = "";
         this.password = "";
     }
     LoginFormComponent.prototype.ngOnInit = function () {
     };
     LoginFormComponent.prototype.onSubmit = function () {
+        var _this = this;
         // console.log(this.username);
         // console.log(this.password);
         if (this.data.type === "Employee") {
@@ -31,16 +33,25 @@ var LoginFormComponent = /** @class */ (function () {
         }
         if (this.data.type === "Customer") {
             // TODO do Customer login
+            this.service.login(this.username, this.password).subscribe(function (res) {
+                localStorage.setItem('user', res.data);
+                _this.dialog.close();
+                _this.router.navigate(['/customer-dashboard']);
+                _this.snackBar.open("Login Successfull!", null, {
+                    duration: 2000,
+                    verticalPosition: "top"
+                });
+            });
         }
         if (this.data.type === "Vendor") {
             // TODO do Vendor login
         }
-        this.dialog.close();
-        this.router.navigate(['/customer-dashboard']);
-        this.snackBar.open("Login Successfull!", null, {
-            duration: 2000,
-            verticalPosition: "top"
-        });
+        // this.dialog.close();
+        // this.router.navigate(['/customer-dashboard']);
+        // this.snackBar.open("Login Successfull!", null, {
+        //   duration: 2000,
+        //   verticalPosition: "top"
+        // });
     };
     LoginFormComponent = __decorate([
         core_1.Component({
