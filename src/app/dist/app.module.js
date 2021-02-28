@@ -7,7 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
+var http_1 = require("@angular/common/http");
 var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
@@ -29,6 +31,7 @@ var sidenav_1 = require("@angular/material/sidenav");
 var icon_1 = require("@angular/material/icon");
 var tooltip_1 = require("@angular/material/tooltip");
 var snack_bar_1 = require("@angular/material/snack-bar");
+var profile_component_1 = require("./profile/profile.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -39,10 +42,13 @@ var AppModule = /** @class */ (function () {
                 home_component_1.HomeComponent,
                 login_form_component_1.LoginFormComponent,
                 sidenav_component_1.SidenavComponent,
-                customer_dashboard_component_1.CustomerDashboardComponent
+                customer_dashboard_component_1.CustomerDashboardComponent,
+                profile_component_1.ProfileComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
+                router_1.RouterModule,
+                http_1.HttpClientModule,
                 app_routing_module_1.AppRoutingModule,
                 animations_1.BrowserAnimationsModule,
                 toolbar_1.MatToolbarModule,

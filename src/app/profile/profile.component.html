@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="relative">
+        <mat-card>
+            <button mat-icon-button class="absolute" *ngIf="readOnly" (click)="toggleEdit()" matTooltip="edit profile details">
+                <i class="fa fa-edit"></i>
+            </button>
+            <button mat-icon-button class="absolute" *ngIf="!readOnly" (click)="saveDetails()" matTooltip="save profile details">
+                <i class="fas fa-check"></i>
+            </button>
+            <img src="../../assets/man-avatar-profile-round-icon_24640-14046.jpg" alt="profile image" class="image">
+            <mat-card-title>
+                Profile Details
+            </mat-card-title>
+            <mat-card-content>
+                <form novalidate>
+                    <div fxFlex="column">
+                        <mat-form-field class="full-width">
+                            <mat-label>First Name</mat-label>
+                            <input matInput type="text" [readonly]="readOnly" name="fname" [(ngModel)]="firstName" #name="ngModel">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput type="text" [readonly]="readOnly" name="lname" [(ngModel)]="lastName" #name="ngModel">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>City</mat-label>
+                            <input matInput type="text" [readonly]="readOnly" name="cityForm" [(ngModel)]="city" #name="ngModel">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Address</mat-label>
+                            <textarea matInput type="text" [readonly]="readOnly" name="adressForm" [(ngModel)]="address" #name="ngModel"></textarea>
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Phone</mat-label>
+                            <input matInput type="number" [readonly]="readOnly" name="phone" [(ngModel)]="telephone" #name="ngModel">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Region</mat-label>
+                            <input matInput type="text" [readonly]="readOnly" name="reg" [(ngModel)]="region" #name="ngModel">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Country</mat-label>
+                            <input matInput type="text" [readonly]="readOnly" name="countryForm" [(ngModel)]="country" #name="ngModel">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Postal Code</mat-label>
+                            <input matInput type="text" [readonly]="readOnly" name="pcode" [(ngModel)]="postalCode" #name="ngModel">
+                        </mat-form-field>
+                    </div>  
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

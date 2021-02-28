@@ -27,24 +27,24 @@ export class LoginFormComponent implements OnInit {
     }
     if (this.data.type === "Customer") {
       // TODO do Customer login
-      this.service.login(this.username, this.password).subscribe((res) => {
-        localStorage.setItem('user', res.data);
-        this.dialog.close();
-        this.router.navigate(['/customer-dashboard']);
-        this.snackBar.open("Login Successfull!", null, {
-          duration: 2000,
-          verticalPosition: "top"
-        });
-      });
+      // this.service.login(this.username, this.password).subscribe((res) => {
+      //   localStorage.setItem('user', res.data);
+      //   this.dialog.close();
+      //   this.router.navigate(['/customer-dashboard']);
+      //   this.snackBar.open("Login Successfull!", null, {
+      //     duration: 2000,
+      //     verticalPosition: "top"
+      //   });
+      // });
     }
     if (this.data.type === "Vendor") {
       // TODO do Vendor login
     }
-    // this.dialog.close();
-    // this.router.navigate(['/customer-dashboard']);
-    // this.snackBar.open("Login Successfull!", null, {
-    //   duration: 2000,
-    //   verticalPosition: "top"
-    // });
+    this.dialog.close();
+    this.router.navigate(['/customer-dashboard']);
+    this.snackBar.open("Login Successfull!", null, {
+      duration: 2000,
+      verticalPosition: "top"
+    });
   }
 }

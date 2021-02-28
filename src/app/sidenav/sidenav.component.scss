@@ -39,8 +39,26 @@ button {
     text-align: center;
 }
 
+mat-toolbar {
+    display:flex;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 2;
+}
 
 .text {
     font-size: large;
     margin-left: 20px;
+}
+
+.router-outlet {
+    padding-top: 4rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.large {
+    font-size: larger;
 }

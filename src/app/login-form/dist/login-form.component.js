@@ -46,12 +46,12 @@ var LoginFormComponent = /** @class */ (function () {
         if (this.data.type === "Vendor") {
             // TODO do Vendor login
         }
-        // this.dialog.close();
-        // this.router.navigate(['/customer-dashboard']);
-        // this.snackBar.open("Login Successfull!", null, {
-        //   duration: 2000,
-        //   verticalPosition: "top"
-        // });
+        this.dialog.close();
+        this.router.navigate(['/customer-dashboard']);
+        this.snackBar.open("Login Successfull!", null, {
+            duration: 2000,
+            verticalPosition: "top"
+        });
     };
     LoginFormComponent = __decorate([
         core_1.Component({

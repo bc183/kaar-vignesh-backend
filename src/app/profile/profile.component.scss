@@ -1,0 +1,30 @@
+.container {
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+mat-card {
+    width: 600px;
+    margin: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

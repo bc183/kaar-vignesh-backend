@@ -1,7 +1,9 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="side">
         <div fxFlex fxLayout="column">
-            <img src="../../assets/man-avatar-profile-round-icon_24640-14046.jpg" class="pro-image" matTooltip="View profile" alt="view profile">
+            <a [routerLink]="['/profile']">
+                <img src="../../assets/man-avatar-profile-round-icon_24640-14046.jpg" class="pro-image"  matTooltip="View profile" alt="view profile">
+            </a>
             <div class="button-group" fxFlex fxLayout="column">
                 <button mat-button class="center">
                     <i class="fas fa-question fa-3x"></i>
@@ -24,13 +26,16 @@
             <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" matTooltip="toggle menu"  aria-label="Example icon-button with menu icon">
               <mat-icon>menu</mat-icon>
             </button>
-            <span>DashBoard</span>
+            <a mat-button class="bold large" [routerLink]="['/customer-dashboard']">
+                DashBoard
+            </a>
             <span class="example-spacer"></span>
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" matTooltip="view profile" >
+            <button mat-icon-button class="example-icon" [routerLink]="['/profile']" aria-label="Example icon-button with menu icon" matTooltip="view profile" >
                 <mat-icon>person</mat-icon>
             </button>
-        </mat-toolbar>        
-        <router-outlet>
-        </router-outlet>
+        </mat-toolbar>
+        <div class="router-outlet">
+            <router-outlet></router-outlet>
+        </div>        
     </mat-sidenav-content>
 </mat-sidenav-container>
