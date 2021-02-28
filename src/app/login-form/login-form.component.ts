@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-form',
@@ -10,7 +12,7 @@ export class LoginFormComponent implements OnInit {
 
   username: string = "";
   password: string = "";
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialogRef<LoginFormComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialogRef<LoginFormComponent>, public router: Router, private snackBar: MatSnackBar) { }
   
 
   ngOnInit(): void {
@@ -29,6 +31,10 @@ export class LoginFormComponent implements OnInit {
       // TODO do Vendor login
     }
     this.dialog.close();
+    this.router.navigate(['/customer-dashboard']);
+    this.snackBar.open("Login Successfull!", null, {
+      duration: 2000,
+      verticalPosition: "top"
+    });
   }
-
 }

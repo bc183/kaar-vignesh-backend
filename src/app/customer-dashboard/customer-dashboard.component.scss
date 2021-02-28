@@ -1,0 +1,33 @@
+.center {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.container {
+    padding-top: 40px;
+}
+
+
+.card {
+    z-index: 1;
+    width: 200px;
+    text-align: center;
+    height: 200px;
+    margin: 10px;
+    //background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    //border-radius: 200px;
+    margin-bottom: 50px;
+}
+
+mat-card:hover {
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@
 <!-- start of body -->
 <div class="container">
     <h1 class="center bold white">Welcome!</h1>
-    <div fxLayout="row" fxLayoutAlign="space-evenly start">
+    <div fxLayout.xs="column" fxLayout.gt-sm="row" fxLayoutAlign.xs="space-around center" fxLayoutAlign.gt-sm="space-evenly start">
         <div>
             <mat-card class="card" (click)="openDialog('Employee')">
                 <img src="../../assets/employee.png" alt="employee" class="image">

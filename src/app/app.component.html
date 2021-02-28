@@ -1,1 +1,2 @@
-<router-outlet></router-outlet>
+<app-sidenav *ngIf="!isHome"></app-sidenav>
+<router-outlet *ngIf="isHome"></router-outlet>
